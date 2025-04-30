@@ -1,0 +1,9 @@
+tqdm
+numpy
+scipy
+pandas
+plotly
+scikit-learn
+kaleido
+nbformat
+xlsxwriter
