@@ -68,10 +68,8 @@ We propose Qualification Benchmark (**QualBench**), a pioneering multi-domain Ch
   </div>
   <div style="display: flex; flex-direction: column; gap: 10px;">
     <div>
-      <img src="img/stats_by_domain.jpg" alt="Stats by Domain" style="width: 220px; height: auto;">
-    </div>
-    <div>
-      <img src="img/stats_by_type.jpg" alt="Stats by Type" style="width: 200px; height: auto;">
+      <img src="img/stats_by_domain.jpg" alt="Stats by Domain" style="width: 280px; height: auto;">
+      <img src="img/stats_by_type.jpg" alt="Stats by Type" style="width: 250px; height: auto;">
     </div>
   </div>
 
