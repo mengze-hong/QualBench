@@ -23,7 +23,7 @@ We propose Qualification Benchmark (**QualBench**), a pioneering multi-domain Ch
 | [FinEval](https://github.com/SUFE-AIFLM-Lab/FinEval) | Finance Qualification Exams | 8,351 | GPT-4o | Finance | ❌ | ❌ |
 | [CMExam](https://github.com/williamliujl/CMExam) | Chinese National Medical Licensing Exam | 68,119 | GPT-4 | Medical | ❌ | ❌ |
 | [LogiQA](https://github.com/lgw863/LogiQA-dataset) | Civil Servants Exams of China | 8,678 | RoBERTa | ❌ | ✅ | ✅ |
-| **QualBench (ours)** | Multiple Sources | 17,298 | Qwen-7B | Multiple | ✅ | ✅ |
+| **QualBench (ours)** | Multiple Sources | 17,316 | Qwen-7B | Multiple | ✅ | ✅ |
 
 </div>
 
