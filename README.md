@@ -37,7 +37,7 @@ or you can download the data directly from `./data`.
 ## 📰 Overview
 Qualification examinations in China are rigorous, standardized tests that certify professionals across diverse fields, ensuring they meet both industry and regulatory standards. Serving as critical gateways to professional practice, they provide a trusted measure of domain expertise in real-world contexts. We introduce **QualBench**, a first multi-domain Chinese QA benchmark built to evaluate LLM performance in localized, professional settings. Featuring **17,316** expert-verified questions from **26** national qualification exams, QualBench bridges the gap in current benchmarks by offering broad domain coverage and capturing the unique knowledge demands of China’s professional landscape.
 
-**📅 August 21, 2025**: [QualBench](https://arxiv.org/abs/2505.05225) has been accepted to **EMNLP 2025 Main Conference**!  
+**📅 August 21, 2025**: QualBench has been accepted to **EMNLP 2025 Main Conference**!  
 
 
 
@@ -51,7 +51,7 @@ Qualification examinations in China are rigorous, standardized tests that certif
 | [FinEval](https://github.com/SUFE-AIFLM-Lab/FinEval) | Finance Qualification Exams | 8,351 | GPT-4o | Finance | ❌ | ❌ |
 | [CMExam](https://github.com/williamliujl/CMExam) | Chinese National Medical Licensing Exam | 68,119 | GPT-4 | Medical | ❌ | ❌ |
 | [LogiQA](https://github.com/lgw863/LogiQA-dataset) | Civil Servants Exams of China | 8,678 | RoBERTa | ❌ | ✅ | ✅ |
-| **QualBench (ours)** | Multiple Sources | 17,316 | Qwen-7B | Multiple | ✅ | ✅ |
+| **QualBench (ours)** | **Multiple Sources** | **17,316** | **Qwen-7B** | **Multiple** | ✅ | ✅ |
 
 </div>
 
@@ -80,19 +80,12 @@ python ./src/test_QualBench.py \
 Additionally, you can:  
 * Fine-tune your own models on our pre-processed datasets. See the example in `./src/finetune_FinLLM.py`.  
 * Run evaluations on existing models (both local and API-based). Examples are available in `./src/example`.  
-* Conduct ablation studies on key LLM topics, such as detecting data contamination (`./src/example/test_shuffled.py`), evaluating prompt engineering strategies (`./src/example/test_prompt.py`), and experimenting with LLM crowdsourcing techniques (`./src/example/aggregation`).  
+* Conduct ablation studies on key LLM concerns, such as:  
+  * Detecting data contamination (`./src/example/test_shuffled.py`)  
+  * Evaluating prompt engineering strategies (`./src/example/test_prompt.py`)  
+  * Experimenting with LLM crowdsourcing techniques (`./src/example/aggregation`)  
 
 
-<div style="display: flex; align-items: flex-start; gap: 20px; max-width: 800px; margin: 0 auto; justify-content: center;">
-
-  <div style="display: flex; flex-direction: column; gap: 10px;">
-    <div>
-      <img src="img/stats_by_domain.jpg" alt="Stats by Domain" style="width: 280px; height: auto;">
-      <img src="img/stats_by_type.jpg" alt="Stats by Type" style="width: 250px; height: auto;">
-    </div>
-  </div>
-
-</div>
 
 
 
