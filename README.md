@@ -1,19 +1,47 @@
-<div align="center">
-  <a href="https://swarms.world">
-    <h1>QualBench💯</h1>
-  </a>
-</div>
 <p align="center">
-  <em>Benchmarking Chinese LLMs with Localized Qualification Benchmark</em>
+  <a href="http://swe-bench.github.io">
+    <img src="img/QualBench.png" style="height: 10em" alt="Kawi the SWE-Llama" />
+  </a>
+</p>
+
+
+<p align="center">
+  <em>Benchmarking Chinese LLMs with Localized Professional Qualifications</em>
+</p>
+
+<p align="center"><strong>[&nbsp;<a href="https://arxiv.org/abs/2505.05225">Read the Paper</a>&nbsp;]</strong></p>
+
+
+<p align="center">
+    <a href="https://www.python.org/">
+        <img alt="Build" src="https://img.shields.io/badge/python-%3E=_3.10-green.svg?color=purple">
+    </a>
+    <a href="https://opensource.org/licenses/Apache-2.0">
+        <img alt="License" src="https://img.shields.io/badge/License-Apache_2.0-blue.svg">
+    </a>
+    <a href="https://badge.fury.io/py/swebench">
+        <img src="https://badge.fury.io/py/swebench.svg">
+    </a>
 </p>
 
 ---
 
-Qualification examinations in China are standardized, expert-verified tests designed to certify professionals across various domains, ensuring they meet industry and regulatory standards. These exams serve as critical gateways for workforce entry, offering a reliable framework for evaluating the domain-specific knowledge of LLMs in real-world applications.
+To access QualBench, copy and run the following code:
+```python
+from datasets import load_dataset
+dataset = load_dataset("mengze-hong/QualBench")
+```
+or you can download the data directly from `./data`.
 
-We propose Qualification Benchmark (**QualBench**), a pioneering multi-domain Chinese QA benchmark designed to evaluate the performance of LLMs in localized Chinese context. Comprising 17,298 expert-verified questions sourced from 26 professional qualification examinations in China, the dataset addresses the gap in existing benchmarks, which often lack coverage of diverse vertical domains and fail to account for China-specific knowledge requirements.
 
-<div style="font-size: 80%;">
+## 📰 Overview
+Qualification examinations in China are rigorous, standardized tests that certify professionals across diverse fields, ensuring they meet both industry and regulatory standards. Serving as critical gateways to professional practice, they provide a trusted measure of domain expertise in real-world contexts. We introduce **QualBench**, a first multi-domain Chinese QA benchmark built to evaluate LLM performance in localized, professional settings. Featuring **17,316** expert-verified questions from **26** national qualification exams, QualBench bridges the gap in current benchmarks by offering broad domain coverage and capturing the unique knowledge demands of China’s professional landscape.
+
+**📅 August 21, 2025**: [QualBench](https://arxiv.org/abs/2505.05225) has been accepted to **EMNLP 2025 Main Conference**!  
+
+
+
+<div style="font-size: 70%;">
 
 | Dataset | Source Qualification Exam | Size | Best Model | Vertical Domain | Localization | Explainable |
 |---|---------------------------------------------------------------|--------|------------|----------------|--------------|-------------|
@@ -27,45 +55,36 @@ We propose Qualification Benchmark (**QualBench**), a pioneering multi-domain Ch
 
 </div>
 
-## Dataset Statistics
+
+
+## 💽 Usage
+Evaluate with batch inference on QualBench with the following command:
+```bash
+python ./src/test_QualBench.py \
+    --model baichuan-inc/Baichuan-13B-Chat \
+    --batch_size 32 \
+    --output_path res_baichuan13b.jsonl
+
+    # use --model to specify the model path or name (Hugging Face repo or local path)
+    # use --batch_size to control the number of samples processed per inference batch
+    # use --output_path to set the output JSONL file path
+
+```
+
+
+> [!WARNING]
+> Batch inference can be highly resource-intensive.  
+> For optimal performance, we recommend using an **H20 GPU** and keeping the batch size at **64 or fewer**.
+
+
+Additionally, you can:  
+* Fine-tune your own models on our pre-processed datasets. See the example in `./src/finetune_FinLLM.py`.  
+* Run evaluations on existing models (both local and API-based). Examples are available in `./src/example`.  
+* Conduct ablation studies on key LLM topics, such as detecting data contamination (`./src/example/test_shuffled.py`), evaluating prompt engineering strategies (`./src/example/test_prompt.py`), and experimenting with LLM crowdsourcing techniques (`./src/example/aggregation`).  
+
 
 <div style="display: flex; align-items: flex-start; gap: 20px; max-width: 800px; margin: 0 auto; justify-content: center;">
-  <div style="font-size: 80%;">
-    <table>
-      <tr>
-        <th><strong>Category</strong></th>
-        <th><strong>Number of Questions</strong></th>
-      </tr>
-      <tr>
-        <td>Production Safety (安全生产)</td>
-        <td>6550</td>
-      </tr>
-      <tr>
-        <td>Fire Safety (消防安全)</td>
-        <td>2817</td>
-      </tr>
-      <tr>
-        <td>Civil Engineering (建筑工程)</td>
-        <td>2525</td>
-      </tr>
-      <tr>
-        <td>Economics and Finance (经济金融)</td>
-        <td>2371</td>
-      </tr>
-      <tr>
-        <td>Oil and Gas (石油天然气)</td>
-        <td>1604</td>
-      </tr>
-      <tr>
-        <td>Banking and Insurance (银行保险)</td>
-        <td>1431</td>
-      </tr>
-      <tr>
-        <td><strong>Total</strong></td>
-        <td>17,298</td>
-      </tr>
-    </table>
-  </div>
+
   <div style="display: flex; flex-direction: column; gap: 10px;">
     <div>
       <img src="img/stats_by_domain.jpg" alt="Stats by Domain" style="width: 280px; height: auto;">
@@ -75,32 +94,26 @@ We propose Qualification Benchmark (**QualBench**), a pioneering multi-domain Ch
 
 </div>
 
-## How to use QualBench
 
-Load the data using Python's built-in `json` package as shown below:
-```python
-import json
 
-file_path = "./QualBench_dataset.json"
 
-with open(file_path, "r", encoding="utf8") as f:
-    datas = json.load(f)
-  
-print(datas[0])
+## 🚀 Contributions
+We warmly welcome collaboration from the broader NLP, Machine Learning, and Education communities. Whether it’s improving our methods, expanding the dataset, or exploring new evaluation directions, we’re eager to work together to push this project further. 
 
-"""
-{'idx': 0,
- 'question_type': '单选题',
- 'domain': '安全生产',
- 'question': '机械设备运动部分是最危险的部位，尤其是那些操作人员易接触的零部件，下列针对不同机械设备转动部位的危险所采取的安全防护措施中，正确的是（）。\nA．针对轧钢机，在验式机轴处采用锥形防护罩防护\nB．针对辊式输送机，在驱动轴上游安装防护罩防护\nC．针对啮合齿轮，齿轮转动机构采用半封闭防护\nD．针对手持式砂轮机，在磨削区采用局部防护',
- 'answer': 'A',
- 'explanation': 'B项，辊式输送机应该在驱动轴的下游安装防护罩。'}
-"""
+For any discussions or inquiries, please reach out to [Mengze Hong](https://mengze-hong.github.io/) at mengze.hong@connect.polyu.hk.
+
+## 📂 Citation
+
+If you find our work helpful, please use the following citations.
+
+```bibtex
+@misc{qualbench2025,
+      title={QualBench: Benchmarking Chinese LLMs with Localized Professional Qualifications for Vertical Domain Evaluation}, 
+      author={Mengze Hong and Wailing Ng and Di Jiang and Chen Jason Zhang},
+      year={2025},
+      eprint={2505.05225},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2505.05225}, 
+}
 ```
-
-A complete code implementation is provided in `./test_gpt4o.py`.
-
-## Evaluation Results
-The benchmark evaluates five state-of-the-art Chinese LLMs (e.g., Qwen2.5, ChatGLM3) alongside non-Chinese models (e.g., GPT-4o, LLama-7B) in a one-shot setting. Results demonstrate that Chinese LLMs, particularly Qwen2.5, consistently outperform non-Chinese counterparts, highlighting the dataset’s superiority in differentiating model capabilities in China-specific applications and emphasize the significant advantages of Chinese LLMs in applications under the Chinese context.
-
-![Evaluation Result](img/fig_evaluation_result.jpg)
