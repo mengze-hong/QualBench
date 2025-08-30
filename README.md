@@ -100,13 +100,10 @@ For any discussions or inquiries, please reach out to [Mengze Hong](https://meng
 If you find our work helpful, please use the following citations.
 
 ```bibtex
-@misc{qualbench2025,
-      title={QualBench: Benchmarking Chinese LLMs with Localized Professional Qualifications for Vertical Domain Evaluation}, 
-      author={Mengze Hong and Wailing Ng and Di Jiang and Chen Jason Zhang},
-      year={2025},
-      eprint={2505.05225},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2505.05225}, 
+@inproceedings{hong2025qualbench,
+    title={QualBench: Benchmarking Chinese {LLM}s with Localized Professional Qualifications for Vertical Domain Evaluation},
+    author={Mengze Hong and Wailing Ng and Chen Jason Zhang and Di Jiang},
+    booktitle={The 2025 Conference on Empirical Methods in Natural Language Processing},
+    year={2025},
 }
 ```
