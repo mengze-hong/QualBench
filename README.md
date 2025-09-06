@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="http://swe-bench.github.io">
+  <a href="https://arxiv.org/abs/2505.05225">
     <img src="img/QualBench.png" style="height: 10em" alt="Kawi the SWE-Llama" />
   </a>
 </p>
