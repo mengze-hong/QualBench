@@ -35,7 +35,7 @@ or you can download the data directly from `./data`.
 
 
 ## 📰 Overview
-Qualification examinations in China are rigorous, standardized tests that certify professionals across diverse fields, ensuring they meet both industry and regulatory standards. Serving as critical gateways to professional practice, they provide a trusted measure of domain expertise in real-world contexts. We introduce **QualBench**, a first multi-domain Chinese QA benchmark built to evaluate LLM performance in localized, professional settings. Featuring **17,316** expert-verified questions from **26** national qualification exams, QualBench bridges the gap in current benchmarks by offering broad domain coverage and capturing the unique knowledge demands of China’s professional landscape.
+Qualification examinations in China are rigorous, standardized tests that certify professionals across diverse fields, ensuring they meet both industry and regulatory standards. Serving as critical gateways to professional practice, they provide a trusted measure of domain expertise in real-world contexts. We introduce **QualBench**, the first multi-domain Chinese QA benchmark built to evaluate LLM performance in localized, professional settings. Featuring **17,316** expert-verified questions from **26** national qualification exams, QualBench bridges the gap in current benchmarks by offering broad domain coverage and capturing the unique knowledge demands of China’s professional landscape.
 
 **📅 August 21, 2025**: QualBench has been accepted to **EMNLP 2025 Main Conference**!  
 
